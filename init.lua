@@ -154,10 +154,15 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'folke/tokyonight.nvim',
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require('tokyonight').setup({
+        transparent = true,
+        style = "night",
+      })
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
@@ -216,6 +221,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
